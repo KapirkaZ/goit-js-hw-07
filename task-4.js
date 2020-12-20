@@ -1,9 +1,20 @@
-const counterValue = 0;
-function increment() {
+const wrapButton = {
+  sub: document.querySelector("[data-action='increment']"),
+  add: document.querySelector("[data-action='decrement']"),
+  span: document.querySelector("#value"),
+  wrapper: document.querySelector("#counter "),
+};
+let counterValue = 0;
+const increment = () => {
   counterValue += 1;
-  document.getElementById("value").innerHTML = counterValue;
-}
-function decrement() {
+
+  document.getElementById("value").textContent = counterValue;
+};
+
+const decrement = () => {
   counterValue -= 1;
-  document.getElementById("value").innerHTML = counterValue;
-}
+
+  document.getElementById("value").textContent = counterValue;
+};
+wrapButton.sub.addEventListener("click", increment);
+wrapButton.add.addEventListener("click", decrement);
