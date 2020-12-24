@@ -1,6 +1,6 @@
 const items = [...document.querySelectorAll("li.item")];
 console.log(items);
-console.log("В списке ${items.length} категории.");
+console.log(`В списке ${items.length} категории.`);
 
 items
   .map((item) => {
