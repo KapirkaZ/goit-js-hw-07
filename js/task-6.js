@@ -17,13 +17,31 @@
 //   }
 // };
 
-document.getElementById("validation-input").onblur = function () {
-  console.log(this.value.length);
-  if (this.getAttribute("data-length") > this.value.length) {
-    this.classList.remove("valid");
-    this.classList.add("invalid");
+// document.getElementById("validation-input").onblur = function () {
+//   console.log(this.value.length);
+//   if (this.getAttribute("data-length") > this.value.length) {
+//     this.classList.remove("valid");
+//     this.classList.add("invalid");
+//   } else {
+//     this.classList.remove("invalid");
+//     this.classList.add("valid");
+//   }
+// };
+
+const inputEl = document.querySelector("#validation-input");
+let totalLength = inputEl.getAttribute("data-length");
+let parsTotalLength = parseInt(totalLength);
+
+inputEl.addEventListener("blur", (event) => {
+  inputEl.textContent = event.target.value;
+
+  const text = inputEl.value.length;
+
+  if (text !== parsTotalLength) {
+    event.target.classList.add("invalid");
+    event.target.classList.remove("valid");
   } else {
-    this.classList.remove("invalid");
-    this.classList.add("valid");
+    event.target.classList.add("valid");
+    event.target.classList.remove("invalid");
   }
-};
+});

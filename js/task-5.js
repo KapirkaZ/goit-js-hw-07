@@ -3,8 +3,8 @@ let nameOutput = document.getElementById("name-output");
 
 input.oninput = function () {
   if (input.value === "") {
-    nameOutput.innerHTML = "незнакомец";
+    nameOutput.textContent = "незнакомец";
   } else {
-    nameOutput.innerHTML = input.value;
+    nameOutput.textContent = input.value;
   }
 };
